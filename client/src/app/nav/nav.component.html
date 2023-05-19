@@ -1,25 +1,31 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Licenta</a>
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active">Licenta</a>
      
 
-        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="accountService.currentUser$ | async">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lists</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Messages</a>
-          </li>
-          <li class="nav-item" >
-            <a class="nav-link">Edit Profile</a>
-          </li>
+        <ul class="navbar-nav me-auto mb-2 mb-md-0" >
+          <ng-container *ngIf="accountService.currentUser$ | async">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/members" routerLinkActive="active">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#">Edit Profile</a>
+            </li>
+          </ng-container>
+          
           
         </ul>
-        <div class="test" (click)="logout()" >
-          <a class="nav-link" *ngIf="accountService.currentUser$ | async">Logout</a></div>
+        <div class="test  navbar-nav" (click)="logout()" *ngIf="(accountService.currentUser$ | async) as user">
+          <p class="text-light text-decoration-none me-3 mt-3">Welcome  {{user.username | titlecase}}</p>
+          <button class="btn btn-outline-success" type="submit" >Logout</button>
+        
+        </div>
           
         
 

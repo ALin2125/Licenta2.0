@@ -7,17 +7,24 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { MemberListComponent } from './mebmer/member-list/member-list.component';
+import { MemberDetailComponent } from './mebmer/member-detail/member-detail.component';
 import { FormsModule } from '@angular/forms';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    MemberListComponent,
+    MemberDetailComponent,
+    ListsComponent,
+    MessagesComponent
      
   ],
   imports: [
@@ -25,7 +32,7 @@ import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule,
+    SharedModule
     
     
 
