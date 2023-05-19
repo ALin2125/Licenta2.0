@@ -18,7 +18,9 @@
               <a class="nav-link" href="#">Edit Profile</a>
             </li>
           </ng-container>
-          
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
+          </li>
           
         </ul>
         <div class="test  navbar-nav" (click)="logout()" *ngIf="(accountService.currentUser$ | async) as user">
