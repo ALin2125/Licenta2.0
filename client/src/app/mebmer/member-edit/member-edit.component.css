@@ -10,23 +10,24 @@
 
 .card-footer{
     padding: 10px 15px;
+    
     border-top: none;
 }
 mat-tab-group {
-    color:#000000;
-    background-color: #424242;
+    color:#fff;
+   
     border-radius: 1%;
     
 }
 .eu {
-    background-color: wheat;
+    
 }
 mat-tab{
-    background-color: wheat;
-    color: #000000;
+    
+    color: #eee;
 }
 .tab-panel {
-    border: 1px solid #ddd;
+    border: 1px solid #ffffff;
     padding: 10px;
     border-radius: 4px;
   }
@@ -38,7 +39,7 @@ mat-tab{
   .member-tabset > .nav-tabs > li.open > a, .member-tabset > .nav-tabs > li:hover > a {
     border: 0;
     background: none !important;
-    color: #000000;
+    color: #fff;
   }
   
   .member-tabset > .nav-tabs > li.open > a > i, .member-tabset > .nav-tabs > li:hover > a > i {
@@ -56,11 +57,11 @@ mat-tab{
   
   .member-tabset > .nav-tabs > li.active > a {
     border: 0 !important;
-    color: #000000;
+    color: #fff;
   }
   
   .member-tabset > .nav-tabs > li.active > a > i {
-    color: #000000;
+    color: #ffffff;
   }
   
   .member-tabset > .tab-content {
@@ -73,9 +74,3 @@ mat-tab{
  .member-tabset{
     color: #000000;
  }
-
- .ngx-gallery{
-    display: inline-block;
-    margin-bottom: 20px;
- }
-  
