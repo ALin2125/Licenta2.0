@@ -1,8 +1,12 @@
+using System.Text;
 using API.Data;
 using API.Helpers;
 using API.Interfaces;
 using API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace API.Extenstions
 {
@@ -21,6 +25,8 @@ namespace API.Extenstions
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             services.AddScoped<IPhotoService, PhotoService>();
+            
+                
 
             return services;
         }

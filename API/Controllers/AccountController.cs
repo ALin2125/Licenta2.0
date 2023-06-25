@@ -11,7 +11,8 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
     
-
+   //[AllowAnonymous]
+    
     public class AccountController : BaseApiController
     {
          
@@ -49,6 +50,7 @@ namespace API.Controllers
         }
         
         
+        //[AllowAnonymous]
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
@@ -58,7 +60,7 @@ namespace API.Controllers
 
             if (user == null) return Unauthorized();
 
-            using var hmac = new HMACSHA512(user.PasswordSalt);
+            using var hmac = new HMACSHA512(user.PasswordSalt); //user.PasswordSalt
 
             var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
 
