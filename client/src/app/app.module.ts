@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { MemberListComponent } from './mebmer/member-list/member-list.component';
 import { MemberDetailComponent } from './mebmer/member-detail/member-detail.component';
+import { MemberCardComponent } from './mebmer/member-card/member-card.component';
 import { FormsModule } from '@angular/forms';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -19,6 +20,8 @@ import { SharedModule } from './_modules/shared.module';
 import { ErrorIterceptor } from './_interceptors/error.interceptor';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
     RegisterComponent,
     MemberListComponent,
     MemberDetailComponent,
+    MemberCardComponent,
     ListsComponent,
     MessagesComponent,
     TestErrorComponent,
@@ -41,14 +45,16 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
     
     
 
     
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorIterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorIterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
