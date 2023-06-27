@@ -25,7 +25,7 @@
         </ul>
         <div class="test  navbar-nav" (click)="logout()" *ngIf="(accountService.currentUser$ | async) as user">
           
-          <p class="text-light text-decoration-none me-3 mt-3">Welcome  {{user.username | titlecase}}</p>
+          <p class="text-light text-decoration-none me-3 mt-3">Welcome  {{user.knownAs | titlecase}}</p>
           <button class="btn btn-outline-success" type="submit" >Logout</button>
         
         </div>

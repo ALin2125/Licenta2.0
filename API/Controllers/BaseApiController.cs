@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+   // [ServiceFilter(typeof(LogUserActivity))]
     [AllowAnonymous]
     [ApiController]
     [Route("api/[controller]")]

@@ -28,7 +28,7 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './mebmer/photo-editor/photo-editor.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 
-import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,8 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
     TestErrorComponent,
     ServerErrorComponent,
     NotFoundComponent,
-    TextInputComponent
+    TextInputComponent,
+    
  
     
      
@@ -60,6 +61,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
     SharedModule,
     BrowserAnimationsModule,
     ReactiveFormsModule
+    
     
     
 

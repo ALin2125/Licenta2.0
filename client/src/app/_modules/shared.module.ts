@@ -8,6 +8,13 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { FileUploadModule } from 'ng2-file-upload';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { TimeagoModule } from 'ngx-timeago';
+
+
 
 
 
@@ -28,6 +35,13 @@ import { FileUploadModule } from 'ng2-file-upload';
         }),
         NgxGalleryModule,
         FileUploadModule,
+        MatPaginatorModule,
+        PaginationModule.forRoot(),
+        MatDatepickerModule,
+        ButtonsModule.forRoot(),
+        TimeagoModule.forRoot()
+        
+
 
     ],
     exports: [
@@ -37,6 +51,11 @@ import { FileUploadModule } from 'ng2-file-upload';
         NgxSpinnerModule,
         NgxGalleryModule,
         FileUploadModule,
+        MatPaginatorModule,
+        PaginationModule,
+        MatDatepickerModule,
+        ButtonsModule,
+        TimeagoModule
 
     ]
 })
