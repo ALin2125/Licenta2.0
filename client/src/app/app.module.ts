@@ -10,7 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { MemberListComponent } from './mebmer/member-list/member-list.component';
 import { MemberDetailComponent } from './mebmer/member-detail/member-detail.component';
 import { MemberCardComponent } from './mebmer/member-card/member-card.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
@@ -26,6 +26,9 @@ import { CommonModule } from '@angular/common';
 import { MemberEditComponent } from './mebmer/member-edit/member-edit.component';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './mebmer/photo-editor/photo-editor.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
+
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { PhotoEditorComponent } from './mebmer/photo-editor/photo-editor.compone
     MessagesComponent,
     TestErrorComponent,
     ServerErrorComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TextInputComponent
+ 
     
      
   ],
@@ -53,7 +58,8 @@ import { PhotoEditorComponent } from './mebmer/photo-editor/photo-editor.compone
     HttpClientModule,
     FormsModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
     
     
 

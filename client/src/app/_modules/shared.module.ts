@@ -10,6 +10,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { FileUploadModule } from 'ng2-file-upload';
 
 
+
 @NgModule({
     declarations: [],
     imports: [
@@ -26,7 +27,8 @@ import { FileUploadModule } from 'ng2-file-upload';
           positionClass: 'toast-bottom-right'
         }),
         NgxGalleryModule,
-        FileUploadModule
+        FileUploadModule,
+
     ],
     exports: [
         BrowserAnimationsModule,
@@ -34,7 +36,8 @@ import { FileUploadModule } from 'ng2-file-upload';
         MatTabsModule,
         NgxSpinnerModule,
         NgxGalleryModule,
-        FileUploadModule
+        FileUploadModule,
+
     ]
 })
 

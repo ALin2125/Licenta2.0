@@ -19,12 +19,12 @@ export class ErrorIterceptor implements HttpInterceptor{
                                 const modelStateErrors = [];
                                 for (const key in error.error.errors){
                                     if(error.error.errors[key]){
-                                        modelStateErrors.push(error.error.errors)
+                                        modelStateErrors.push(error.error.errors[key])
                                     }
                                 }
-                                throw modelStateErrors;
+                                throw modelStateErrors.flat();
                             } else{
-                                this.toastr.error(error.error, error.status.toString())
+                                this.toastr.error(error.statusText, error.status.toString());
                             }
                             break;
                         case 401:
