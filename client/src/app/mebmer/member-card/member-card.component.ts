@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
+import { ToastrService } from "ngx-toastr";
 import { Member } from "src/app/_models/member";
+import { MembersService } from "src/app/_services/member.service";
 
 @Component({
     selector: 'app-member-card',
@@ -11,9 +13,15 @@ export class MemberCardComponent implements OnInit {
     @Input() member: Member | undefined;
 
     
-    constructor() { }
+    constructor(private memberService: MembersService, private toastr: ToastrService) { }
 
     ngOnInit(): void {
         
+    }
+
+    addAdd(member: Member) {
+        this.memberService.addAdd(member.userName).subscribe({
+            next: () => this.toastr.success('You sent a friend request to ' + member.knownAs)
+        })
     }
 }
