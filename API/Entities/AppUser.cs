@@ -25,7 +25,8 @@ namespace API.Entities
         public List<UserAdd> AddedByUsers { get; set; }
         public List<UserAdd> AddedUsers { get; set; }
         public List<Project> Projects { get; set; } = new();
-
+        public List<Message> MessagesSent { get; set; }
+        public List<Message> MessagesReceived { get; set; }
       
     }
 }

@@ -12,17 +12,17 @@
     padding: 10px 15px;
     border-top: none;
 }
-mat-tab-group {
+tabset {
     color:#000000;
     background-color: #424242;
     border-radius: 1%;
     
 }
 .eu {
-    background-color: wheat;
+    background-color: rgb(255, 255, 255);
 }
 mat-tab{
-    background-color: wheat;
+    background-color: rgb(255, 255, 255);
     color: #000000;
 }
 .tab-panel {
@@ -32,7 +32,7 @@ mat-tab{
   }
   
   .nav-tabs > li.open, .member-tabset > .nav-tabs > li:hover {
-    border-bottom: 4px solid #faa4a8;
+    border-bottom: 4px solid #ffffff;
   }
   
   .member-tabset > .nav-tabs > li.open > a, .member-tabset > .nav-tabs > li:hover > a {

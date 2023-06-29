@@ -1,5 +1,6 @@
 using System.Text;
 using API.Data;
+using API.Data.Migrations;
 using API.Helpers;
 using API.Interfaces;
 using API.Services;
@@ -28,6 +29,7 @@ namespace API.Extenstions
             services.AddScoped<IPhotoService, PhotoService>();
             services.AddScoped<LogUserActivity>();
             services.AddScoped<IAddsRepository, AddsRepository>();
+            services.AddScoped<IMessageRepository, MessageRepository>();
             
                 
 

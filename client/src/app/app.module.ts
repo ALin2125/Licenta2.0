@@ -29,6 +29,7 @@ import { PhotoEditorComponent } from './mebmer/photo-editor/photo-editor.compone
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MemberMessagesComponent } from './mebmer/member-messages/member-messages.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     ServerErrorComponent,
     NotFoundComponent,
     TextInputComponent,
+    MemberMessagesComponent
     
  
     

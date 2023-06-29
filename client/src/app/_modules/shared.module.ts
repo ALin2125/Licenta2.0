@@ -13,6 +13,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
 
@@ -28,7 +29,7 @@ import { TimeagoModule } from 'ngx-timeago';
             type: 'square-jelly-box'
         }),
         
-        //TabsModule.forRoot(),
+        TabsModule.forRoot(),
         //TooltipModule.forRoot(),
         ToastrModule.forRoot({
           positionClass: 'toast-bottom-right'
@@ -55,7 +56,8 @@ import { TimeagoModule } from 'ngx-timeago';
         PaginationModule,
         MatDatepickerModule,
         ButtonsModule,
-        TimeagoModule
+        TimeagoModule,
+        TabsModule
 
     ]
 })
