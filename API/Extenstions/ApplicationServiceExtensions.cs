@@ -4,6 +4,7 @@ using API.Data.Migrations;
 using API.Helpers;
 using API.Interfaces;
 using API.Services;
+using API.SignalR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -30,6 +31,8 @@ namespace API.Extenstions
             services.AddScoped<LogUserActivity>();
             services.AddScoped<IAddsRepository, AddsRepository>();
             services.AddScoped<IMessageRepository, MessageRepository>();
+            services.AddSignalR();
+            services.AddSingleton<PresenceTracker>();
             
                 
 

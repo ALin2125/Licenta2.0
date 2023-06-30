@@ -1,4 +1,5 @@
 using System.Data.Common;
+using System.Linq.Expressions;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,11 @@ namespace API.Data
         public DbSet<UserAdd> Adds { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Message> Messages{ get; set; }
+        public DbSet<Group> Groups{ get; set; }
+        public DbSet<Connection> Connections{ get; set; }
+
+       
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
