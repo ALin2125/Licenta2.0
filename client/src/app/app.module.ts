@@ -30,6 +30,9 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MemberMessagesComponent } from './mebmer/member-messages/member-messages.component';
+import { ProjectEditorComponent } from './mebmer/project-editor/project-editor.component';
+
+
 
 @NgModule({
   declarations: [
@@ -48,11 +51,8 @@ import { MemberMessagesComponent } from './mebmer/member-messages/member-message
     ServerErrorComponent,
     NotFoundComponent,
     TextInputComponent,
-    MemberMessagesComponent
-    
- 
-    
-     
+    MemberMessagesComponent,
+    ProjectEditorComponent  
   ],
   imports: [
     BrowserModule,

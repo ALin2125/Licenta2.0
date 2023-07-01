@@ -13,7 +13,6 @@ namespace API.Data
         }
         public DbSet<AppUser> Users { get; set; }
         public DbSet<UserAdd> Adds { get; set; }
-        public DbSet<Project> Projects { get; set; }
         public DbSet<Message> Messages{ get; set; }
         public DbSet<Group> Groups{ get; set; }
         public DbSet<Connection> Connections{ get; set; }

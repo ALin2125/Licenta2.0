@@ -15,7 +15,20 @@ import { MembersService } from "src/app/_services/member.service";
   })
 
   export class MemberEditComponent implements OnInit {
+onFileSelected(_t76: HTMLInputElement) {
+throw new Error('Method not implemented.');
+}
+uploadProject() {
+throw new Error('Method not implemented.');
+}
+deleteProject(arg0: any) {
+throw new Error('Method not implemented.');
+}
+downloadProject(arg0: any) {
+throw new Error('Method not implemented.');
+}
     @ViewChild('editForm') editForm: NgForm | undefined;
+projects: any;
     @HostListener('window:beforeunload', ['$event']) unloadNotification($event:any) {
         if (this.editForm?.dirty) {
             $event.returnValue = true;

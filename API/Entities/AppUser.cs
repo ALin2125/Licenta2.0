@@ -22,9 +22,9 @@ namespace API.Entities
         public string City { get; set; }
         public string Country { get; set; }
         public List<Photo> Photos { get; set; } = new();
+        public List<Project> Projects { get; set; } = new();
         public List<UserAdd> AddedByUsers { get; set; }
         public List<UserAdd> AddedUsers { get; set; }
-        public List<Project> Projects { get; set; } = new();
         public List<Message> MessagesSent { get; set; }
         public List<Message> MessagesReceived { get; set; }
       

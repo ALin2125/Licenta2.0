@@ -28,11 +28,15 @@ namespace API.Extenstions
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             services.AddScoped<IPhotoService, PhotoService>();
+            services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<LogUserActivity>();
             services.AddScoped<IAddsRepository, AddsRepository>();
             services.AddScoped<IMessageRepository, MessageRepository>();
             services.AddSignalR();
             services.AddSingleton<PresenceTracker>();
+            
+            
+            
             
                 
 

@@ -95,9 +95,15 @@ export class MembersService{
         return this.http.delete(this.baseUrl + 'users/delete-photo/' + photoId);
     }
 
+    deleteProject(projectId: number) {
+        return this.http.delete(this.baseUrl + 'users/delete-project/' + projectId);
+    }
+
     addAdd(username: string) {
         return this.http.post(this.baseUrl + 'adds/' + username, {});
     }
+
+    
 
     getAdds(predicate: string, pageNumber: number, pageSize: number) {
         let params = getPaginationHeaders(pageNumber, pageSize);

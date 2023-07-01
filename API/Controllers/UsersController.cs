@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using System.Security.Claims;
 using API.DTOs;
 using API.Entities;
@@ -21,10 +22,14 @@ namespace API.Controllers
         private readonly IUserRepository _userRepository;
         public IMapper _mapper { get; }
         public IPhotoService _photoService;
+        
+        private readonly IProjectService _projectService;
 
         public UsersController(IUserRepository userRepository, IMapper mapper,
-         IPhotoService photoService)
+         IPhotoService photoService, IProjectService projectService)
         {
+            _projectService = projectService;
+            
             _photoService = photoService;
             _mapper = mapper;
             _userRepository = userRepository;
@@ -95,6 +100,36 @@ namespace API.Controllers
             return BadRequest("Problem adding photo");
         }
 
+         [HttpPost("add-project")]
+        public async Task<ActionResult<ProjectDto>> AddProject(IFormFile file)
+        {
+            var user  = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
+
+            if (user == null) return NotFound();
+
+            var result = await _projectService.AddProjectAsync(file);
+
+            if (result.Error != null) return BadRequest(result.Error.Message);
+
+            var project = new Project
+            {
+                Url = result.SecureUrl.AbsoluteUri,
+                PublicId = result.PublicId
+            };
+
+            
+
+            user.Projects.Add(project);
+
+            if (await _userRepository.SaveAllAsync()) 
+            {
+                return CreatedAtAction(nameof(GetUser),
+                    new {username = user.UserName}, _mapper.Map<ProjectDto>(project));
+            }
+
+            return BadRequest("Problem adding project");
+        }
+
         [HttpPut("set-main-photo/{photoId}")]
         public async Task<ActionResult> SetMainPhoto(int photoId)
         {
@@ -142,5 +177,32 @@ namespace API.Controllers
 
             return BadRequest("Porblem deleting photo");
         }
+
+        [HttpDelete("delete-project/{projectId}")]
+        public async Task<ActionResult> DeleteProject(int projectId)
+        {
+            var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
+
+            var project = user.Projects.FirstOrDefault(x => x.Id == projectId);
+
+            if (project == null) return NotFound();
+
+            if (project.PublicId != null)
+            {
+                var result = await _projectService.DeleteProjectAsync(project.PublicId);
+                if (result.Error != null) return BadRequest(result.Error.Message);
+            }
+
+            user.Projects.Remove(project);
+
+            if (await _userRepository.SaveAllAsync()) return Ok();
+
+            return BadRequest("Porblem deleting project");
+        }
+
+       
+
+        
+        
     }
 }
